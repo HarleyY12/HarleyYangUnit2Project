@@ -9,6 +9,7 @@ public class LinearEquation {
     private int y2;
     private boolean noSlope;
     private String equation;
+    private int e;
 
 
 
@@ -30,7 +31,7 @@ public class LinearEquation {
 
     {
         secondPair = x2 + "," + y2;
-
+        
     }
 
     public double returnSlope;
