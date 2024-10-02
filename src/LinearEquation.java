@@ -9,7 +9,7 @@ public class LinearEquation {
     private int y2;
     private boolean noSlope;
     private String equation;
-    private int e;
+    
 
 
 
