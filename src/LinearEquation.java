@@ -33,19 +33,9 @@ public class LinearEquation {
     }
 
     public double calculateDistance() {
-        return Math.sqrt(Math.pow(x2 - x1, 2)) + Math.pow(y2 - y1, 2);
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 
-    public double getSlope() {
-        return slope;
-    }
-
-    public double getYIntercept() {
-        return yIntercept;
-    }
-    public double getDistance() {
-        return distance;
-    }
     public String slopeAsFraction() {
         int numerator = y2 - y1;
         int denominator = x2 - x1;
