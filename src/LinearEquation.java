@@ -38,7 +38,6 @@ public class LinearEquation {
     public String slopeAsFraction() {
         int numerator = y2 - y1;
         int denominator = x2 - x1;
-       
         if (denominator < 0){
             denominator = Math.abs(denominator);
             numerator = -numerator;
@@ -54,7 +53,10 @@ public class LinearEquation {
         } else {
             return numerator + "/" + denominator;
         }
+
     }
+
+
     public String getEquation() {
         if (noSlope) {
             return "There is no slope and no linear equation";
@@ -63,7 +65,8 @@ public class LinearEquation {
         String interceptString;
         if (calculateSlope() ==1){
             slopeString = "";
-        }else{
+        }
+        if (calculateSlope() == -1){
             slopeString = "-";
         }
 
@@ -92,7 +95,6 @@ public class LinearEquation {
         return result;
     }
 }
-
 
 
 
