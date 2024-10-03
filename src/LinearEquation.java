@@ -1,9 +1,10 @@
+
+
 public class LinearEquation {
     private int x1;
     private int x2;
     private int y1;
     private int y2;
-    private double slope;
     private double yIntercept;
     private double distance;
     private boolean noSlope;
@@ -18,7 +19,6 @@ public class LinearEquation {
             noSlope = true;
         } else {
             noSlope = false;
-            slope = calculateSlope();
             yIntercept = calculateYIntercept();
         }
         distance = calculateDistance();
@@ -29,21 +29,26 @@ public class LinearEquation {
     }
 
     public double calculateYIntercept() {
-        return y1 - slope * x1;
+        return y1 - calculateSlope() * x1;
     }
 
     public double calculateDistance() {
         return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
-
     public String slopeAsFraction() {
         int numerator = y2 - y1;
         int denominator = x2 - x1;
+       
         if (denominator < 0){
             denominator = Math.abs(denominator);
             numerator = -numerator;
         }
-        
+        if (numerator / denominator == 1) {
+            return "1";
+        }
+        if (numerator / denominator == -1) {
+            return "-1";
+        }
         if (numerator % denominator == 0) {
             return Integer.toString(numerator / denominator);
         } else {
@@ -55,8 +60,13 @@ public class LinearEquation {
             return "There is no slope and no linear equation";
         }
         String slopeString = slopeAsFraction();
-
         String interceptString;
+        if (calculateSlope() ==1){
+            slopeString = "";
+        }else{
+            slopeString = "-";
+        }
+
         if (yIntercept == 0) {
             interceptString = "";
         } else if (yIntercept > 0) {
@@ -78,6 +88,7 @@ public class LinearEquation {
                     "Slope: " + slopeAsFraction() + "\n" +
                     "Y-intercept: " + String.format("%.2f", yIntercept) + "\n";
         }
+
         return result;
     }
 }
