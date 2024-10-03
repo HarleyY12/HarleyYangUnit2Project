@@ -39,6 +39,11 @@ public class LinearEquation {
     public String slopeAsFraction() {
         int numerator = y2 - y1;
         int denominator = x2 - x1;
+        if (denominator < 0){
+            denominator = Math.abs(denominator);
+            numerator = -numerator;
+        }
+        
         if (numerator % denominator == 0) {
             return Integer.toString(numerator / denominator);
         } else {
