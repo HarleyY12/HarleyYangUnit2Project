@@ -58,9 +58,6 @@ public class LinearEquation {
 
 
     public String getEquation() {
-        if (noSlope) {
-            return "There is no slope and no linear equation";
-        }
         String slopeString = slopeAsFraction();
         String interceptString;
         if (calculateSlope() ==1){
