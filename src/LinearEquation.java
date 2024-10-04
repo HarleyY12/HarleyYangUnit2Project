@@ -1,21 +1,22 @@
 
 
+
+
 public class LinearEquation {
-    private int x1;
-    private int x2;
-    private int y1;
-    private int y2;
+    private final int x1;
+    private final int x2;
+    private final int y1;
+    private final int y2;
     private double yIntercept;
-    private double distance;
-    private boolean noSlope;
+    private final double distance;
+    private final boolean noSlope;
 
     public LinearEquation(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
-
-        if (x1 == x2) {
+        if (x1 == x2 ) {
             noSlope = true;
         } else {
             noSlope = false;
@@ -23,15 +24,12 @@ public class LinearEquation {
         }
         distance = calculateDistance();
     }
-
     private double calculateSlope() {
         return (double) (y2 - y1) / (x2 - x1);
     }
-
     public double calculateYIntercept() {
         return y1 - calculateSlope() * x1;
     }
-
     public double calculateDistance() {
         return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
@@ -53,10 +51,7 @@ public class LinearEquation {
         } else {
             return numerator + "/" + denominator;
         }
-
     }
-
-
     public String getEquation() {
         String slopeString = slopeAsFraction();
         String interceptString;
@@ -66,7 +61,6 @@ public class LinearEquation {
         if (calculateSlope() == -1){
             slopeString = "-";
         }
-
         if (yIntercept == 0) {
             interceptString = "";
         } else if (yIntercept > 0) {
@@ -76,11 +70,10 @@ public class LinearEquation {
         }
         return "y = " + slopeString + "x" + interceptString;
     }
-
     public String toString() {
-        String result = "First point: " + x1 + "," + y1 + "\n" +
-                "Second point: " + x2 + "," + y2 + "\n" +
-                "Distance between the points: " + distance + "\n";
+        String result = "First point: (" + x1 + "," + y1 + ")\n" +
+                "Second point: (" + x2 + "," + y2 + ")\n" +
+                "Distance between the points: " + String.format("%.2f",distance) + "\n";
         if (noSlope) {
             result += "The line is vertical; slope is undefined.\n";
         } else {
@@ -88,12 +81,9 @@ public class LinearEquation {
                     "Slope: " + slopeAsFraction() + "\n" +
                     "Y-intercept: " + yIntercept;
         }
-
         return result;
     }
+    public double solveForY3(double x3) {
+        return calculateSlope() * x3 + yIntercept;
+    }
 }
-
-
-
-
-
