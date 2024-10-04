@@ -89,7 +89,7 @@ public class LinearEquation {
         } else {
             result += "Equation of the line: " + getEquation() + "\n" +
                     "Slope: " + slopeAsFraction() + "\n" +
-                    "Y-intercept: " + String.format("%.2f", yIntercept) + "\n";
+                    "Y-intercept: " + yIntercept;
         }
 
         return result;
