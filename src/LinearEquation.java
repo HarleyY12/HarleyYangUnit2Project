@@ -79,7 +79,7 @@ public class LinearEquation {
         } else {
             result += "Equation of the line: " + getEquation() + "\n" +
                     "Slope: " + slopeAsFraction() + "\n" +
-                    "Y-intercept: " + yIntercept;
+                    "Y-intercept: " + String.format("%.2f",yIntercept);
         }
         return result;
     }
