@@ -14,8 +14,16 @@ public class EquationRunner {
         int y2 = s.nextInt();
         LinearEquation equation = new LinearEquation(x1,y1,x2,y2);
         System.out.println(equation);
+        System.out.println("Enter a third x-value: ");
+        double x3 = s.nextDouble();
+        double y3 = equation.solveForY3(x3);
+        System.out.println("The solved coordinate point is (" + x3 + "," + y3 + ")");
     }
 }
+
+
+
+
 
 
 
