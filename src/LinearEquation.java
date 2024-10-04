@@ -73,7 +73,7 @@ public class LinearEquation {
             return "First point: (" + x1 + "," + y1 + ")\n" +
                     "Second point: (" + x2 + "," + y2 + ")\n" +
                     "Distance between the points: " + String.format("%.2f",distance) + "\n" +
-                    "The line is vertical; slope is undefined.\n";
+                    "There is no slope;there is no linear equation.";
         }
         else {
             return  "First point: (" + x1 + "," + y1 + ")\n" +
