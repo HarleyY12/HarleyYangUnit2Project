@@ -83,7 +83,7 @@ public class LinearEquation {
     public String toString() {
         String result = "First point: " + x1 + "," + y1 + "\n" +
                 "Second point: " + x2 + "," + y2 + "\n" +
-                "Distance between the points: " + String.format("%.2f", distance) + "\n";
+                "Distance between the points: " + distance + "\n";
         if (noSlope) {
             result += "The line is vertical; slope is undefined.\n";
         } else {
