@@ -1,7 +1,5 @@
 
 
-
-
 public class LinearEquation {
     private final int x1;
     private final int x2;
@@ -24,7 +22,7 @@ public class LinearEquation {
         }
         distance = calculateDistance();
     }
-    public double calculateSlope() {
+    private double calculateSlope() {
         return (double) (y2 - y1) / (x2 - x1);
     }
     public double calculateYIntercept() {
@@ -71,17 +69,20 @@ public class LinearEquation {
         return "y = " + slopeString + "x" + interceptString;
     }
     public String toString() {
-        String result = "First point: (" + x1 + "," + y1 + ")\n" +
-                "Second point: (" + x2 + "," + y2 + ")\n" +
-                "Distance between the points: " + String.format("%.2f",distance) + "\n";
         if (noSlope) {
-            result += "The line is vertical; slope is undefined.\n";
-        } else {
-            result += "Equation of the line: " + getEquation() + "\n" +
+            return "First point: (" + x1 + "," + y1 + ")\n" +
+                    "Second point: (" + x2 + "," + y2 + ")\n" +
+                    "Distance between the points: " + String.format("%.2f",distance) + "\n" +
+                    "The line is vertical; slope is undefined.\n";
+        }
+        else {
+            return  "First point: (" + x1 + "," + y1 + ")\n" +
+                    "Second point: (" + x2 + "," + y2 + ")\n" +
+                    "Distance between the points: " + String.format("%.2f",distance) + "\n" +
+                    "Equation of the line: " + getEquation() + "\n" +
                     "Slope: " + slopeAsFraction() + "\n" +
                     "Y-intercept: " + String.format("%.2f",yIntercept);
         }
-        return result;
     }
     public double solveForY3(double x3) {
         return calculateSlope() * x3 + yIntercept;
