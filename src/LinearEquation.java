@@ -16,13 +16,14 @@ public class LinearEquation {
         this.x2 = x2;
         this.y2 = y2;
         //Check If Line is Vertical
-        if (x1 == x2 ) {
+         if (x1 == x2 ) {
             noSlope = true;
+            distance = calculateDistance();
         } else {
             noSlope = false;
             yIntercept = calculateYIntercept();
+            distance = calculateDistance();
         }
-        distance = calculateDistance();
     }
     //Method to Calculate Slope
     private double calculateSlope() {
