@@ -61,7 +61,7 @@ public class LinearEquation {
         String slopeString = slopeAsFraction();
         String interceptString;
         // Rewrites Slope as "" if 1 or "-" if -1
-        if (calculateSlope() ==1){
+        if (calculateSlope() == 1){
             slopeString = "";
         }
         if (calculateSlope() == -1){
@@ -69,13 +69,13 @@ public class LinearEquation {
         }
         //Format the Y-Intercept String
         if (yIntercept == 0) {
-            interceptString = "";
+            interceptString = " ";
         }else if (yIntercept > 0) {
             interceptString = " + " + String.format("%.2f", yIntercept);
         }else{
             interceptString = " - " + String.format("%.2f", Math.abs(yIntercept));
         }
-        return "y = " + slopeString + "x" + interceptString;
+        return "y = " + slopeString + " x " + interceptString;
     }
     //Returns Details of Linear Equation
     public String toString() {
