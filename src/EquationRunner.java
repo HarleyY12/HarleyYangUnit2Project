@@ -33,7 +33,7 @@ public class EquationRunner {
         double y3 = equation.solveForY3(x3);
 
         //Display the Solved Coordinate Point
-        System.out.println("The solved coordinate point is (" + x3 + "," + y3 + ")");
+        System.out.println("The solved coordinate point is (" + x3 + "," + (String.format("%.2f",y3)) + ")");
     }
 }
 
