@@ -60,7 +60,7 @@ public class LinearEquation {
     public String getEquation() {
         String slopeString = slopeAsFraction();
         String interceptString;
-        //Initializes Rewrites Slope as "" if 1 or "-" if -1
+        // Rewrites Slope as "" if 1 or "-" if -1
         if (calculateSlope() ==1){
             slopeString = "";
         }
