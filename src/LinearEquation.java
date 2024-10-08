@@ -25,7 +25,7 @@ public class LinearEquation {
         distance = calculateDistance();
     }
     //Method to Calculate Slope
-    private double calculateSlope() {
+    public double calculateSlope() {
         return (double) (y2 - y1) / (x2 - x1);
     }
     //Method to Calculate Y-Intercept
