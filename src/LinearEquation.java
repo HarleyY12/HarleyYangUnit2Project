@@ -25,7 +25,7 @@ public class LinearEquation {
         distance = calculateDistance();
     }
     //Method to Calculate Slope
-    public double calculateSlope() {
+    private double calculateSlope() {
         return (double) (y2 - y1) / (x2 - x1);
     }
     //Method to Calculate Y-Intercept
@@ -44,10 +44,9 @@ public class LinearEquation {
             denominator = Math.abs(denominator);
             numerator = -numerator;
         }
-        if (numerator / denominator == 1) {
+        if (numerator == denominator) {
             return "1";
-        }
-        if (numerator / denominator == -1) {
+        } else if (numerator == -denominator) {
             return "-1";
         }
         if (numerator % denominator == 0) {
@@ -60,8 +59,8 @@ public class LinearEquation {
     public String getEquation() {
         String slopeString = slopeAsFraction();
         String interceptString;
-        // Rewrites Slope as "" if 1 or "-" if -1
-        if (calculateSlope() == 1){
+        //Initializes Rewrites Slope as "" if 1 or "-" if -1
+        if (calculateSlope() ==1){
             slopeString = "";
         }
         if (calculateSlope() == -1){
@@ -69,13 +68,13 @@ public class LinearEquation {
         }
         //Format the Y-Intercept String
         if (yIntercept == 0) {
-            interceptString = " ";
+            interceptString = "";
         }else if (yIntercept > 0) {
             interceptString = " + " + String.format("%.2f", yIntercept);
         }else{
             interceptString = " - " + String.format("%.2f", Math.abs(yIntercept));
         }
-        return "y = " + slopeString + " x " + interceptString;
+        return "y = " + slopeString + "x" + interceptString;
     }
     //Returns Details of Linear Equation
     public String toString() {
@@ -99,6 +98,9 @@ public class LinearEquation {
         return calculateSlope() * x3 + yIntercept;
     }
 }
+
+
+
 
 
 
