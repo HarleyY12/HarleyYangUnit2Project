@@ -7,17 +7,15 @@ public class EquationRunner {
 
         //Ask for First Coordinate Point
         System.out.println("Enter the first coordinate point: ");
-        System.out.print("x1: ");
-        int x1 = s.nextInt();
-        System.out.print("y1: ");
-        int y1 = s.nextInt();
+        String firstPoint = s.nextLine();
+        int x1 = Integer.parseInt(firstPoint.substring(firstPoint.indexOf("(") + 1 , firstPoint.indexOf(',')));
+        int y1 = Integer.parseInt(firstPoint.substring(firstPoint.indexOf(",") + 1 , firstPoint.indexOf(')')));
 
         //Ask for Second Coordinate Point
         System.out.println("Enter the second coordinate point: ");
-        System.out.print("x2: ");
-        int x2 = s.nextInt();
-        System.out.print("y2: ");
-        int y2 = s.nextInt();
+        String secondPoint = s.nextLine();
+        int x2 = Integer.parseInt(secondPoint.substring(secondPoint.indexOf("(") + 1 ,secondPoint.indexOf(",")));
+        int y2 = Integer.parseInt(secondPoint.substring(secondPoint.indexOf(",") + 1 ,secondPoint.indexOf(")")));
 
         //New Instance of LinearEquation Class
         LinearEquation equation = new LinearEquation(x1,y1,x2,y2);
@@ -33,11 +31,9 @@ public class EquationRunner {
         double y3 = equation.solveForY3(x3);
 
         //Display the Solved Coordinate Point
-        System.out.println("The solved coordinate point is : (" + x3 + "," + (String.format("%.1f",y3)) + ")");
+        System.out.println("The solved coordinate point is (" + x3 + "," + String.format("%.2f", y3) + ")");
     }
 }
-
-
 
 
 
